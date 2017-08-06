@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'Codec'
-  spec.version = '0.2.0'
+  spec.version = '0.3.0'
   spec.homepage = 'https://github.com/mitsuse/codec-swift'
   spec.authors = {
     'Tomoya Kose' => 'tomoya@mitsuse.jp'
