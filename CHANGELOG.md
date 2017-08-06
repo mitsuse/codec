@@ -1,3 +1,8 @@
+## Unreleased
+
+- Support CocoaPods.
+
+
 ## 0.2.0
 
 - Distinguish `Decodable` from `Decoder`. `decode(from:)` becomes instance method.
