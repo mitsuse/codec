@@ -1,10 +1,17 @@
-// swift-tools-version:3.1
+// swift-tools-version:4.0
 
 import PackageDescription
 
 let package = Package(
     name: "Codec",
+    products: [
+        .library(name: "Codec", targets: ["Codec"]),
+    ],
     dependencies: [
-        .Package(url: "https://github.com/antitypical/Result", majorVersion: 3, minor: 2),
-    ]
+        .package(url: "https://github.com/antitypical/Result", .upToNextMinor(from: "3.2.0")),
+    ],
+    targets: [
+        .target(name: "Codec", dependencies: ["Result"]),
+    ],
+    swiftLanguageVersions: [4]
 )
