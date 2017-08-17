@@ -1,5 +1,8 @@
 ## Unreleased
 
+
+## 0.5.0
+
 - Remove `Encodable` and `Decodable`.
     - These protocols prevent codec from supporting multiple format.
 - Provide a typealias `Coder` for `Encoder` and `Decoder`.
