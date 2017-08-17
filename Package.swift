@@ -7,11 +7,9 @@ let package = Package(
     products: [
         .library(name: "Codec", targets: ["Codec"]),
     ],
-    dependencies: [
-        .package(url: "https://github.com/antitypical/Result", .upToNextMinor(from: "3.2.0")),
-    ],
+    dependencies: [],
     targets: [
-        .target(name: "Codec", dependencies: ["Result"]),
+        .target(name: "Codec", dependencies: []),
     ],
     swiftLanguageVersions: [4]
 )
