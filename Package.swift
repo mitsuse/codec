@@ -10,6 +10,7 @@ let package = Package(
     dependencies: [],
     targets: [
         .target(name: "Codec", dependencies: []),
+        .testTarget(name: "CodecTests", dependencies: ["Codec"]),
     ],
     swiftLanguageVersions: [4]
 )

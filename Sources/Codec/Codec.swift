@@ -1,1 +1,1 @@
-public typealias Codec = Encoder & Decoder
+public typealias Coder = Encoder & Decoder
