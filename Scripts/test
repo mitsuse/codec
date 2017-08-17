@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ $(uname) = 'Darwin' ]; then
+    swift --version
+    swift test
+else
+    docker build -t swift .
+
+    # Workaround: Use root instead of developer.
+    # - docker run -u developer -v $TRAVIS_BUILD_DIR:/mnt/project swift swift test --package-path /mnt/project
+    docker run -v $TRAVIS_BUILD_DIR:/mnt/project swift swift test --package-path /mnt/project
+fi
