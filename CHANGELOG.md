@@ -2,6 +2,7 @@
 
 - Remove `Encodable` and `Decodable`.
     - These protocols prevent codec from supporting multiple format.
+- Provide a typealias for `Encoder` and `Decoder`.
 
 
 ## 0.4.0
