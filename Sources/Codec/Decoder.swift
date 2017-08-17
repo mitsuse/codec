@@ -7,9 +7,3 @@ public protocol Decoder {
 
     func decode(from encoded: Encoded) -> Result<Decoded, DecodingError>
 }
-
-public protocol Decodable {
-    associatedtype Decoder: Codec.Decoder
-
-    static var decoder: Decoder { get }
-}

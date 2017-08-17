@@ -1,5 +1,8 @@
 ## Unreleased
 
+- Remove `Encodable` and `Decodable`.
+    - These protocols prevent codec from supporting multiple format.
+
 
 ## 0.4.0
 
