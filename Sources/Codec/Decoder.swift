@@ -1,9 +1,11 @@
 public protocol Decoder {
     associatedtype Decoded
-    associatedtype Encoded
 
-    func decode(from encoded: Encoded) throws -> Decoded
+    func decode(from reader: Reader) throws -> Decoded
 }
 
-public struct DecodingError<Decoded>: Error {
+public protocol Decodable {
+    associatedtype Decoder: Codec.Decoder
+
+    static var decoder: Decoder { get }
 }
