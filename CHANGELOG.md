@@ -1,5 +1,8 @@
 ## Unreleased
 
+- Decoding and encoding are processed via `Reader` and `Writer`.
+    - This avoids copying and writing the result of encoding children on encoding the parent.
+
 
 ## 0.5.0
 

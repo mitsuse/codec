@@ -5,5 +5,4 @@ import XCTest
 @testable import CodecTests
 
 XCTMain([
-    testCase(CodecDataTests.allTests),
 ])
