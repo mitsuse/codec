@@ -5,11 +5,11 @@ public protocol Encoder {
 }
 
 public protocol Encodable {
-    associatedtype Encoder: Codec.Encoder
+    associatedtype Encoder: Codec.Encoder where Encoder.Decoded == Self
 
     static var encoder: Encoder { get }
 }
 
-public func encode<Encodable>(_ encodable: Encodable, with writer: Writer) throws -> Void where Encodable: Codec.Encodable, Encodable.Encoder.Decoded == Encodable {
+public func encode<Encodable>(_ encodable: Encodable, with writer: Writer) throws -> Void where Encodable: Codec.Encodable {
     try Encodable.encoder.encode(encodable, with: writer)
 }

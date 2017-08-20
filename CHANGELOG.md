@@ -2,6 +2,7 @@
 
 - Decoding and encoding are processed via `Reader` and `Writer`.
     - This avoids copying and writing the result of encoding children on encoding the parent.
+- Constrain `Encodable` and `Decodable` to has `Encoder` and `Decoder` for itself.
 
 
 ## 0.5.0
