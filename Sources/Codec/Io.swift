@@ -1,7 +1,7 @@
 public protocol Reader: class {
-    func read(into pointer: UnsafeMutablePointer<UInt8>, count: Int) throws -> Void
+    func read(into pointer: UnsafeMutableBufferPointer<UInt8>) throws -> Void
 }
 
 public protocol Writer: class {
-    func write(_ pointer: UnsafePointer<UInt8>, count: Int) throws -> Void
+    func write(_ pointer: UnsafeBufferPointer<UInt8>) throws -> Void
 }
