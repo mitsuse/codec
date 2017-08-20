@@ -9,3 +9,7 @@ public protocol Decodable {
 
     static var decoder: Decoder { get }
 }
+
+public func decode<Decodable>(_ reader: Reader) throws -> Decodable where Decodable: Codec.Decodable, Decodable.Decoder.Decoded == Decodable {
+    return try Decodable.decoder.decode(from: reader)
+}
