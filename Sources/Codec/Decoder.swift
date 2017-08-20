@@ -5,11 +5,11 @@ public protocol Decoder {
 }
 
 public protocol Decodable {
-    associatedtype Decoder: Codec.Decoder
+    associatedtype Decoder: Codec.Decoder where Decoder.Decoded == Self
 
     static var decoder: Decoder { get }
 }
 
-public func decode<Decodable>(_ reader: Reader) throws -> Decodable where Decodable: Codec.Decodable, Decodable.Decoder.Decoded == Decodable {
+public func decode<Decodable>(_ reader: Reader) throws -> Decodable where Decodable: Codec.Decodable {
     return try Decodable.decoder.decode(from: reader)
 }
