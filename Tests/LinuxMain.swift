@@ -5,4 +5,5 @@ import XCTest
 XCTMain([
     testCase(CodecFloatTests.allTests),
     testCase(CodecDoubleTests.allTests),
+    testCase(CodecInt32Tests.allTests),
 ])
