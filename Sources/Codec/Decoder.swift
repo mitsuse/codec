@@ -13,3 +13,9 @@ public protocol Decodable {
 public func decode<Decodable>(_ reader: Reader) throws -> Decodable where Decodable: Codec.Decodable {
     return try Decodable.decoder.decode(from: reader)
 }
+
+public enum DecodingError: Error {
+    case notPermitted
+    case readAll
+    case incompatible
+}

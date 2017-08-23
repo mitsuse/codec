@@ -1,5 +1,10 @@
 ## Unreleased
 
+- `Reader` may throw `ReadingError`.
+- `Writer` may throw `WritingError`.
+- `Decoder` may throw `DecodingError`.
+- `Encoder` may throw `EncodingError`.
+
 
 ## 0.6.0
 

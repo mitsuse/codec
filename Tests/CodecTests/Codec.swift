@@ -35,3 +35,27 @@ final class ArrayWriter: Writer {
         }
     }
 }
+
+final class ErroneousReader: Reader {
+    private let error: ReadingError
+
+    init(_ error: ReadingError) {
+        self.error = error
+    }
+
+    func read(into pointer: UnsafeMutableBufferPointer<UInt8>) throws -> Void {
+        throw self.error
+    }
+}
+
+final class ErroneousWriter: Writer {
+    private let error: WritingError
+
+    init(_ error: WritingError) {
+        self.error = error
+    }
+
+    func write(_ pointer: UnsafeBufferPointer<UInt8>) throws -> Void {
+        throw self.error
+    }
+}

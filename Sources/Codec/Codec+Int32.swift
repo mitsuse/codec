@@ -14,7 +14,13 @@ public final class Int32Decoder: Decoder {
                 UnsafeMutableBufferPointer(start: bytePointer, count: count)
             }
         }
-        try reader.read(into: bufferPointer)
+        do {
+            try reader.read(into: bufferPointer)
+        } catch ReadingError.notPermitted {
+            throw DecodingError.notPermitted
+        } catch ReadingError.readAll {
+            throw DecodingError.readAll
+        }
         return value
     }
 }
@@ -30,6 +36,12 @@ public final class Int32Encoder: Encoder {
                 UnsafeBufferPointer(start: bytePointer, count: count)
             }
         }
-        try writer.write(bufferPointer)
+        do {
+            try writer.write(bufferPointer)
+        } catch WritingError.notPermitted {
+            throw EncodingError.notPermitted
+        } catch WritingError.shortageOfSpace {
+            throw EncodingError.shortageOfSpace
+        }
     }
 }
