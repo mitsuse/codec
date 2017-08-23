@@ -13,3 +13,8 @@ public protocol Encodable {
 public func encode<Encodable>(_ encodable: Encodable, with writer: Writer) throws -> Void where Encodable: Codec.Encodable {
     try Encodable.encoder.encode(encodable, with: writer)
 }
+
+public enum EncodingError: Error {
+    case notPermitted
+    case shortageOfSpace
+}
